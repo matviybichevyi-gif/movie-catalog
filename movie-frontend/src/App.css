@@ -1,0 +1,91 @@
+/* Глобальні налаштування */
+:root {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --accent: #007bff;
+  --text-main: #ffffff;
+  --text-dim: #b3b3b3;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-main) !important;
+  font-family: 'Inter', -apple-system, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Стилізація заголовків */
+h1 {
+  text-align: center;
+  color: var(--accent);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Контейнер для карток фільмів на головній */
+/* Якщо у тебе головний div має якийсь клас, додай його сюди */
+.movie-list, div > div { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Сама картка фільму (працює на будь-який div всередині списку) */
+div > div > div {
+  background: var(--card-bg);
+  border: 1px solid #333;
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+div > div > div:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+}
+
+/* Стиль тексту */
+p {
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* Кнопки та посилання */
+a, button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+a:hover, button:hover {
+  background-color: #0056b3;
+}
+
+/* Спеціально для кнопки видалення, щоб вона була червоною */
+button[style*="background-color: rgb(255, 77, 77)"], 
+.delete-btn {
+  background-color: #dc3545 !important;
+}
+.movie-poster {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-color: #333; 
+}
